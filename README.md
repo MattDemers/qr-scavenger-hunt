@@ -18,9 +18,11 @@ To add new clues, edit `clues.js`:
   {
     id: 1,
     title: "Clue 1",
-    text: "This is the clue text!",
+    text: "This is where hungry students fuel up between classes. Look for the smell of fresh food and the sound of conversation.",
     image: "images/clue1.jpg",
-    answer: "residence hall"
+    answer: "dining hall",
+    aliases: ["the dining hall", "dining", "caf", "cafeteria"],
+    useqr: true
   }
 ```
 
@@ -29,6 +31,35 @@ To add new clues, edit `clues.js`:
 * `text` is the "clue" text, giving the user an idea of where the QR code is hidden.
 * `image` can either be a URL to an image file (preferably 1:1 ratio) or set to `null` to be hidden.
 * `answer` is the text string used as an answer. It can either be passed to the site through a QR code scanner, or typed manually.
+* `aliases` can be set for alternative, accepted answers, or left blank (example: `aliases: []`). Best used for text, rather than QR codes.
+* `useqr` can be set to `false` in order to remove the QR code scanner button, and only rely on text answers.
+
+The grid will auto-resize based on the amount of clues.
+
+When adding more clues, make sure to add commas between curved brackets, and make sure the last clue doesn't have one. See below, where clue `11` has a comma after its curved bracket, and no comma after the `12`, the final clue.
+
+```json
+  {
+    id: 11,
+    title: "Clue 11",
+    text: "Buses stop here, bikes are parked here, and many students begin or end their day at this transit hub.",
+    image: null,
+    answer: "transit hub",
+    aliases: [],
+    useqr: true
+  },
+  {
+    id: 12,
+    title: "Clue 12",
+    text: "The final stop! This is where new students like you will be living for the next year. Welcome home.",
+    image: null,
+    answer: "residence hall",
+    aliases: [],
+    useqr: true
+  }
+];
+
+```
 
 ### Generating QR Codes
 
