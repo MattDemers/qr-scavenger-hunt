@@ -1,4 +1,4 @@
-/* ── RESET & TOKENS ── */
+/* RESET & TOKENS */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -31,7 +31,7 @@ body {
   margin: 0 auto;
 }
 
-/* ── SCREENS ── */
+/* SCREENS */
 .screen {
   display: none;
   flex-direction: column;
@@ -39,7 +39,7 @@ body {
 }
 .screen.active { display: flex; }
 
-/* ── HOME HEADER ── */
+/* HOME HEADER */
 .home-header {
   background: var(--blue);
   color: #fff;
@@ -59,7 +59,7 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* ── CLUE GRID ── */
+/* CLUE GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -93,7 +93,7 @@ body {
   color: var(--green);
 }
 
-/* ── HOME FOOTER ── */
+/* HOME FOOTER */
 .home-footer {
   padding: 12px 20px 24px;
   text-align: center;
@@ -111,7 +111,21 @@ body {
 }
 .btn-reset:active { color: var(--text); }
 
-/* ── CLUE HEADER ── */
+/* RULES BUTTON */
+
+.btn-rules-link{
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 4px 8px;
+  margin-top: 6px;
+}
+
+/* CLUE HEADER */
 .clue-header {
   background: var(--blue);
   color: #fff;
@@ -138,7 +152,7 @@ body {
   font-weight: 600;
 }
 
-/* ── CLUE CONTENT ── */
+/* CLUE CONTENT */
 .clue-content {
   padding: 20px;
   display: flex;
@@ -179,7 +193,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* ── BUTTONS ── */
+/* BUTTONS */
 .btn-scan {
   background: var(--green-btn);
   color: #fff;
@@ -225,7 +239,7 @@ body {
 }
 .btn-submit:active { background: var(--blue-dark); }
 
-/* ── FEEDBACK ── */
+/* FEEDBACK */
 .feedback {
   border-radius: var(--radius);
   padding: 14px 16px;
@@ -246,7 +260,7 @@ body {
 }
 .feedback.hidden { display: none; }
 
-/* ── SCANNER OVERLAY ── */
+/* SCANNER OVERLAY */
 .scanner-overlay {
   position: fixed;
   inset: 0;
@@ -291,7 +305,7 @@ body {
 }
 .btn-cancel-scan:active { background: #e0e0e0; }
 
-/* ── COMPLETION MODAL ── */
+/* COMPLETION MODAL */
 .modal-overlay {
   position: fixed;
   inset: 0;
