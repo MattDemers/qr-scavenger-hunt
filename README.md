@@ -9,3 +9,27 @@ This is a simple skeleton for a QR Code Scavenger hunt webapp. My usecase is as 
 5. When the user finishes, a message is displayed.
 
 This was made with the aid of Claude Code. 
+
+## Instructions
+
+To add new clues, edit `clues.js`:
+
+```json
+  {
+    id: 1,
+    title: "Clue 1",
+    text: "This is the clue text!",
+    image: "images/clue1.jpg",
+    answer: "residence hall"
+  }
+```
+
+* `id` changes what is displayed on the button itself. You can change this to text by adding a string in quotes instead of a number (example: `id: "Test",`)
+* `title` is what is displayed on the top bar when people tap on a clue.
+* `text` is the "clue" text, giving the user an idea of where the QR code is hidden.
+* `image` can either be a URL to an image file (preferably 1:1 ratio) or set to `null` to be hidden.
+* `answer` is the text string used as an answer. It can either be passed to the site through a QR code scanner, or typed manually.
+
+### Generating QR Codes
+
+It is important to generate the QR code using the exact text that is placed in `answer`. You can generate this by searching for a "[plain text QR code generator](https://letmegooglethat.com/?q=plain+text+QR+code+generator)", or using the plain text option in the one you usually use. However, certain generators (like Adobe Express) only offer URL encoding.
