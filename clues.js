@@ -15,7 +15,7 @@ const CLUES = [
     id: 1,
     title: "Clue 1",
     text: "This is where hungry students fuel up between classes. Look for the smell of fresh food and the sound of conversation.",
-    image: null,
+    image: /images/clue1.png,
     answer: "dining hall"
   },
   {
