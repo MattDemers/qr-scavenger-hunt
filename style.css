@@ -93,6 +93,24 @@ body {
   color: var(--green);
 }
 
+/* ── HOME FOOTER ── */
+.home-footer {
+  padding: 12px 20px 24px;
+  text-align: center;
+}
+.btn-reset {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 4px 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-reset:active { color: var(--text); }
+
 /* ── CLUE HEADER ── */
 .clue-header {
   background: var(--blue);

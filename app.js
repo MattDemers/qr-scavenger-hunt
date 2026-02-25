@@ -172,5 +172,13 @@ document.getElementById('modal-close-btn').addEventListener('click', () => {
   document.getElementById('completion-modal').classList.add('hidden');
 });
 
+document.getElementById('reset-btn').addEventListener('click', () => {
+  if (confirm('Reset all progress? This cannot be undone.')) {
+    progress = {};
+    saveProgress(progress);
+    renderGrid();
+  }
+});
+
 /* ── INIT ── */
 renderGrid();
