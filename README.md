@@ -8,7 +8,7 @@ This is a simple skeleton for a QR Code Scavenger hunt webapp. My usecase is as 
 4. When successful, the user is given feedback and taken back to the main screen. Their progress is shown and saved.
 5. When the user finishes, a message is displayed.
 
-![images/screen1.png]{width=30%} ![images/screen2.png]{width=30%} ![images/screen3.png]{width=30%}
+![/images/screen1.png]{width=30%} ![/images/screen2.png]{width=30%} ![/images/screen3.png]{width=30%}
 
 ## Instructions
 
