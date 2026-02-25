@@ -6,7 +6,9 @@
  *   title  : string  — displayed at the top of the clue screen
  *   text   : string  — the written hint shown to the student
  *   image  : string|null — relative path to an image file, or null for placeholder
- *   answer : string  — the text the QR code encodes (case-insensitive comparison)
+ *   answer : string    — the text the QR code encodes (case-insensitive comparison)
+ *   aliases: string[] — extra accepted answers for text entry (ignored in QR mode)
+ *   useqr  : boolean  — if false, hides the scan button and only shows text entry
  *
  * Replace placeholder text, images, and answers before deploying!
  */
@@ -16,83 +18,107 @@ const CLUES = [
     title: "Clue 1",
     text: "This is where hungry students fuel up between classes. Look for the smell of fresh food and the sound of conversation.",
     image: "images/clue1.jpg",
-    answer: "dining hall"
+    answer: "dining hall",
+    aliases: ["the dining hall", "dining", "caf", "cafeteria"],
+    useqr: true
   },
   {
     id: 2,
     title: "Clue 2",
     text: "Books, quiet study nooks, and endless floors of knowledge — this building is a student's best friend at finals time.",
     image: null,
-    answer: "library"
+    answer: "library",
+    aliases: [],
+    useqr: true
   },
   {
     id: 3,
     title: "Clue 3",
     text: "Whether you need a workout or want to cheer on your team, this facility is the heart of campus athletics.",
     image: null,
-    answer: "recreation center"
+    answer: "recreation center",
+    aliases: [],
+    useqr: true
   },
   {
     id: 4,
     title: "Clue 4",
     text: "This outdoor gathering space sits at the center of campus. Students cross it a dozen times a day without even thinking about it.",
     image: null,
-    answer: "campus quad"
+    answer: "campus quad",
+    aliases: [],
+    useqr: true
   },
   {
     id: 5,
     title: "Clue 5",
     text: "Looking for help with tuition, financial aid, or enrollment? This administrative building handles it all.",
     image: null,
-    answer: "administration building"
+    answer: "administration building",
+    aliases: [],
+    useqr: true
   },
   {
     id: 6,
     title: "Clue 6",
     text: "Aspiring doctors, nurses, and scientists call this building home. It smells faintly of lab chemicals.",
     image: null,
-    answer: "science building"
+    answer: "science building",
+    aliases: [],
+    useqr: true
   },
   {
     id: 7,
     title: "Clue 7",
     text: "Artists, actors, and musicians gather here to rehearse and perform. Check the board out front for upcoming shows.",
     image: null,
-    answer: "arts center"
+    answer: "arts center",
+    aliases: [],
+    useqr: true
   },
   {
     id: 8,
     title: "Clue 8",
     text: "This is where your professors hold their offices and where most of your lectures will take place.",
     image: null,
-    answer: "lecture hall"
+    answer: "lecture hall",
+    aliases: [],
+    useqr: true
   },
   {
     id: 9,
     title: "Clue 9",
     text: "Feeling under the weather? This is the place to go for medical care right on campus.",
     image: null,
-    answer: "health center"
+    answer: "health center",
+    aliases: [],
+    useqr: true
   },
   {
     id: 10,
     title: "Clue 10",
     text: "Student clubs, organizations, and events are run out of this building. Check the bulletin boards — there's always something going on.",
     image: null,
-    answer: "student union"
+    answer: "student union",
+    aliases: [],
+    useqr: true
   },
   {
     id: 11,
     title: "Clue 11",
     text: "Buses stop here, bikes are parked here, and many students begin or end their day at this transit hub.",
     image: null,
-    answer: "transit hub"
+    answer: "transit hub",
+    aliases: [],
+    useqr: true
   },
   {
     id: 12,
     title: "Clue 12",
     text: "The final stop! This is where new students like you will be living for the next year. Welcome home.",
     image: null,
-    answer: "residence hall"
+    answer: "residence hall",
+    aliases: [],
+    useqr: true
   }
 ];

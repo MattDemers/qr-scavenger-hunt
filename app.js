@@ -83,6 +83,9 @@ function openClue(id) {
     imgEl.innerHTML = `<span class="placeholder-label">&#128205; Clue Image</span>`;
   }
 
+  // Show or hide the scan button based on the clue's useqr setting
+  document.getElementById('scan-btn').hidden = !clue.useqr;
+
   // Reset inputs and feedback
   document.getElementById('answer-input').value = '';
   hideFeedback();
@@ -102,14 +105,18 @@ function hideFeedback() {
 }
 
 /* ANSWER VALIDATION */
-function checkAnswer(raw) {
+function checkAnswer(raw, fromQR = false) {
   const clue = CLUES.find(c => c.id === currentClueId);
   if (!clue) return;
 
   const input    = raw.trim().toLowerCase();
   const expected = clue.answer.trim().toLowerCase();
 
-  if (input === expected) {
+  const accepted = fromQR
+    ? [expected]
+    : [expected, ...(clue.aliases || []).map(a => a.trim().toLowerCase())];
+
+  if (accepted.includes(input)) {
     progress[currentClueId] = true;
     saveProgress(progress);
     showFeedback('Correct! Great job finding this spot! 🎉', 'success');
@@ -132,7 +139,7 @@ function startScanner() {
     (decodedText) => {
       // Successfully scanned a QR code
       stopScanner();
-      checkAnswer(decodedText);
+      checkAnswer(decodedText, true);
     },
     () => {
       // Scan attempt failed (no code in frame) — ignore, keep trying
