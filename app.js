@@ -1,11 +1,11 @@
-/* ── CONSTANTS ── */
+/* CONSTANTS */
 const STORAGE_KEY = 'scavenger_hunt_progress';
 
-/* ── STATE ── */
+/* STATE */
 let currentClueId = null;  // id of the clue page currently shown
 let scanner = null;         // Html5Qrcode instance when active
 
-/* ── PROGRESS (persisted in localStorage) ── */
+/* PROGRESS (persisted in localStorage) */
 function loadProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -25,7 +25,7 @@ function saveProgress(progress) {
 
 let progress = loadProgress();
 
-/* ── SCREEN NAVIGATION ── */
+/* SCREEN NAVIGATION */
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -40,7 +40,7 @@ function goHome() {
   showScreen('home-screen');
 }
 
-/* ── HOME GRID ── */
+/* HOME GRID */
 function renderGrid() {
   const grid = document.getElementById('clue-grid');
   grid.innerHTML = '';
@@ -62,7 +62,12 @@ function renderGrid() {
   }
 }
 
-/* ── CLUE SCREEN ── */
+/* RULES SCREEN */
+function openRules() {
+  showScreen ('rules-screen');
+}
+
+/* CLUE SCREEN */
 function openClue(id) {
   currentClueId = id;
   const clue = CLUES.find(c => c.id === id);
@@ -85,7 +90,7 @@ function openClue(id) {
   showScreen('clue-screen');
 }
 
-/* ── FEEDBACK ── */
+/* FEEDBACK */
 function showFeedback(message, type /* 'success' | 'error' */) {
   const el = document.getElementById('feedback');
   el.textContent = message;
@@ -96,7 +101,7 @@ function hideFeedback() {
   document.getElementById('feedback').className = 'feedback hidden';
 }
 
-/* ── ANSWER VALIDATION ── */
+/* ANSWER VALIDATION */
 function checkAnswer(raw) {
   const clue = CLUES.find(c => c.id === currentClueId);
   if (!clue) return;
@@ -115,7 +120,7 @@ function checkAnswer(raw) {
   }
 }
 
-/* ── QR SCANNER ── */
+/* QR SCANNER */
 function startScanner() {
   document.getElementById('scanner-overlay').classList.remove('hidden');
 
@@ -149,7 +154,7 @@ function stopScanner() {
   }
 }
 
-/* ── EVENT LISTENERS ── */
+/* EVENT LISTENERS */
 document.getElementById('back-btn').addEventListener('click', goHome);
 
 document.getElementById('scan-btn').addEventListener('click', startScanner);
@@ -180,5 +185,8 @@ document.getElementById('reset-btn').addEventListener('click', () => {
   }
 });
 
-/* ── INIT ── */
+document.getElementById('rules-btn').addEventListener('click', openRules);
+document.getElementById('rules-back-btn').addEventListener('click', goHome);
+
+/* INIT */
 renderGrid();

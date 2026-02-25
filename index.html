@@ -8,11 +8,12 @@
 </head>
 <body>
 
-  <!-- ── HOME SCREEN ── -->
+  <!-- HOME SCREEN -->
   <div id="home-screen" class="screen active">
     <header class="home-header">
       <h1>Move-In Scavenger Hunt</h1>
       <p class="home-subtitle">Choose a Clue</p>
+      <button id="rules-button" class="btn-rules-link">Rules/Help</button>
     </header>
     <div id="clue-grid" class="grid"></div>
     <footer class="home-footer">
@@ -20,7 +21,19 @@
     </footer>
   </div>
 
-  <!-- ── CLUE SCREEN ── -->
+  <!-- RULES SCREEN -->
+
+  <div id="rules screen" class="screen">
+      <header class="clue-header">
+        <button id="rules-back-btn" class="back-btn">&#8592;</button>
+        <h2>Rules/Help</h2>
+      </header>
+      <div class="clue-content">
+        <p>Text goes here.</p>
+      </div>
+  </div>
+
+  <!-- CLUE SCREEN -->
   <div id="clue-screen" class="screen">
     <header class="clue-header">
       <button id="back-btn" class="back-btn" aria-label="Back to home">&#8592;</button>
@@ -48,14 +61,14 @@
     </div>
   </div>
 
-  <!-- ── QR SCANNER OVERLAY ── -->
+  <!-- QR SCANNER OVERLAY -->
   <div id="scanner-overlay" class="scanner-overlay hidden">
     <p class="scanner-label">Point your camera at a QR code</p>
     <div id="qr-reader"></div>
     <button id="cancel-scan-btn" class="btn-cancel-scan">Cancel</button>
   </div>
 
-  <!-- ── COMPLETION MODAL ── -->
+  <!-- COMPLETION MODAL -->
   <div id="completion-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
     <div class="modal">
       <div class="modal-icon">&#127881;</div>
